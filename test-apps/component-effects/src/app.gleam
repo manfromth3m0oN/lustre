@@ -4,6 +4,7 @@ import gleam/int
 import gleam/list
 import lustre
 import lustre/attribute
+import lustre/component
 import lustre/effect.{type Effect}
 import lustre/element.{type Element}
 import lustre/element/html
@@ -12,7 +13,7 @@ import lustre/event
 // MAIN ------------------------------------------------------------------------
 
 pub fn main() {
-  let app = lustre.application(init, update, view)
+  let app = lustre.component(init, update, view, [])
   let assert Ok(_) = lustre.start(app, "#app", Nil)
 
   Nil
